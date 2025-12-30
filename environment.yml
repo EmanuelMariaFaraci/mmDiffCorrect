@@ -208,6 +208,7 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstd=1.5.2=ha4553b6_0
   - pip:
+    - -e ./pointnet2_local
     - addict==2.4.0
     - antlr4-python3-runtime==4.9.3
     - asttokens==2.2.1
@@ -252,19 +253,6 @@ dependencies:
     - platformdirs==3.10.0
     - plyfile==0.7.4
     - portalocker==2.8.2
-    - promise==2.3
-    - prompt-toolkit==3.0.39
-    - psutil==5.9.4
-    - ptyprocess==0.7.0
-    - pure-eval==0.2.2
-    - pycocotools==2.0.6
-    - pygments==2.15.1
-    - pympler==1.0.1
-    - pywavelets==1.4.1
-    - pyzmq==25.1.1
-  - pip
-  - pip:
-    - -e ./pointnet2_local
     - promise==2.3
     - prompt-toolkit==3.0.39
     - psutil==5.9.4
