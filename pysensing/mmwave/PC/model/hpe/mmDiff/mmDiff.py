@@ -17,6 +17,7 @@ from .ChebConv import ChebConv, _GraphConv, _ResChebGC
 from .GraFormer import *
 from ..p4trans import P4Transformer_feat
 from ..pointTrans import PointTransformerReg_feat
+from ....tutorial.plot import plot_3d_graph
 
 from .utils import *
 from .ema import EMAHelper
@@ -832,6 +833,19 @@ class mmDiffRunner(object):
             action_error_sum = test_calculation(output_pose, targets_3d, self.test_action_list, action_error_sum)
 
             p1, p2 = print_error(action_error_sum, is_train)
+
+            # Visualize predicted vs actual pose
+            if i < 3:  # Display first 3 batches as examples
+                for batch_idx in range(min(2, output_pose.shape[0])):  # Display first 2 samples per batch
+                    print(f"\nBatch {i}, Sample {batch_idx}:")
+                    print(f"MPJPE: {mpjpe(output_pose[batch_idx:batch_idx+1], targets_3d[batch_idx:batch_idx+1]).item() * 1000.0:.4f} mm")
+                    plot_3d_graph(
+                        targets_3d[batch_idx].cpu().numpy(),
+                        output_pose[batch_idx].cpu().numpy(),
+                        elev=-45,
+                        azim=-135,
+                        roll=45
+                    )
 
             if i%1 == 0 and i != 0:
                 print('({batch}/{size}) Data: {data:.6f}s | MPJPE: {e1: .4f} | P-MPJPE: {e2: .4f}'\

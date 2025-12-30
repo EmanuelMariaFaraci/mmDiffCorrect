@@ -251,9 +251,11 @@ dependencies:
     - pickleshare==0.7.5
     - platformdirs==3.10.0
     - plyfile==0.7.4
-    - pointnet2==0.0.0
-    - pointnet2-ops==3.0.0
     - portalocker==2.8.2
+  - pip
+  - pip:
+    - pointnet2-ops==0.0.0
+    - 'git+https://github.com/dvlab-research/PointNet2_PyTorch.git#egg=pointnet2'
     - promise==2.3
     - prompt-toolkit==3.0.39
     - psutil==5.9.4
