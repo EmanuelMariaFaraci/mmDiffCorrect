@@ -1,0 +1,73 @@
+name: mmDiff
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  # Core dependencies
+  - python=3.9
+  - pip
+  
+  # CUDA and GPU support
+  - pytorch::pytorch=1.13.0=py3.9_cuda11.6_cudnn8.3.2_0
+  - pytorch::pytorch-cuda=11.6
+  - pytorch::pytorch-mutex=1.0=cuda
+  
+  # Core scientific packages
+  - numpy
+  - scipy
+  - scikit-image
+  - pandas
+  - matplotlib
+  - opencv
+  - h5py
+  - pyyaml
+  
+  # Jupyter and IPython
+  - jupyter
+  - jupyterlab
+  - ipython
+  - ipykernel
+  
+  # ML/DL related
+  - networkx
+  - trimesh
+  - imageio
+  - pillow
+  
+  # Development tools
+  - git
+  - setuptools
+  - wheel
+  
+  # Visualization
+  - plotly
+  - pydot
+  - graphviz
+
+  # Use prebuilt mmcv-full from OpenMMLab to avoid compilation failures
+  - openmmlab::mmcv-full=1.7.1
+  - cython
+  - ninja
+  - cmake
+
+  - pip:
+    # Only essential pip packages to avoid conflicts
+    - -e ./pointnet2_local
+    - einops
+    - tensorboardX
+    - tqdm
+    - pyyaml
+    - omegaconf>=1.4,<1.5
+    - hydra-core==0.11.3
+    - pycocotools
+    - transformers
+    - timm
+    - mmengine
+    - wandb
+    - torch-summary
+    - thop
+    - plyfile
+    - fvcore
+    - iopath
