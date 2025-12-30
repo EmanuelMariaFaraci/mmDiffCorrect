@@ -46,11 +46,12 @@ dependencies:
   - pydot
   - graphviz
 
-  # Use prebuilt mmcv-full from OpenMMLab to avoid compilation failures
-  - openmmlab::mmcv-full=1.7.1
+  # Build tools for compiling native extensions
   - cython
   - ninja
   - cmake
+  - gcc
+  - gxx
 
   - pip:
     # Only essential pip packages to avoid conflicts
