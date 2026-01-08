@@ -17,7 +17,7 @@ pretrain:
     amp: False
 
     pretrain_model_root: "/home/junqiao/pysensing_local/pretrained/"
-    save_data_root: "/home/junqiao/pysensing_local/mmdata2"
+    save_data_root: "/content/mmDiffCorrect/mmdata2"
 
 
 

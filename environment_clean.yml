@@ -56,6 +56,7 @@ dependencies:
   - pip:
     # Only essential pip packages to avoid conflicts
     - -e ./pointnet2_local
+    - pointnet2-ops
     - einops
     - tensorboardX
     - tqdm

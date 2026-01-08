@@ -5,8 +5,7 @@ import torch.nn as nn
 from pysensing.mmwave.PC.inference.utils import get_intermediate_output
 
 
-from pysensing.mmwave.PC.dataset.har import load_har_dataset
-from pysensing.mmwave.PC.dataset.hgr import load_hgr_dataset
+
 from pysensing.mmwave.PC.dataset.hpe import load_hpe_dataset
 from pysensing.mmwave.PC.model.hpe import load_hpe_model, load_hpe_pretrain
 from pysensing.mmwave.PC.inference import load_pretrain
