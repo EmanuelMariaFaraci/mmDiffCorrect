@@ -17,7 +17,7 @@ from .ChebConv import ChebConv, _GraphConv, _ResChebGC
 from .GraFormer import *
 from ..p4trans import P4Transformer_feat
 from ..pointTrans import PointTransformerReg_feat
-from ....tutorial.plot import plot_3d_graph
+from ....tutorial.plot import plot_3d_graph_all
 
 from .utils import *
 from .ema import EMAHelper
@@ -839,7 +839,7 @@ class mmDiffRunner(object):
                 for batch_idx in range(min(2, output_pose.shape[0])):  # Display first 2 samples per batch
                     print(f"\nBatch {i}, Sample {batch_idx}:")
                     print(f"MPJPE: {mpjpe(output_pose[batch_idx:batch_idx+1], targets_3d[batch_idx:batch_idx+1]).item() * 1000.0:.4f} mm")
-                    plot_3d_graph(
+                    plot_3d_graph_all(
                         targets_3d[batch_idx].cpu().numpy(),
                         output_pose[batch_idx].cpu().numpy(),
                         elev=-45,
